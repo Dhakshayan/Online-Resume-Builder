@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Professional Resume Builder</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Professional Resume Builder</h1>
+        <form id="resumeForm">
+            <div class="personal-info">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="social-links">
+                <label for="linkedin">LinkedIn Profile:</label>
+                <input type="url" id="linkedin" name="linkedin">
+
+                <label for="leetcode">LeetCode Profile:</label>
+                <input type="url" id="leetcode" name="leetcode">
+
+                <label for="github">GitHub Profile:</label>
+                <input type="url" id="github" name="github">
+            </div>
+            <div class="about">
+                <label for="about">About (50 words max):</label>
+                <textarea id="about" name="about" maxlength="50"></textarea>
+            </div>
+            <div class="images">
+                <label for="imageLink">Profile Image Link:</label>
+                <input type="text" id="imageLink" name="imageLink">
+            </div>
+<div class="education-section">
+    <label for="education">Education:</label>
+    <div id="educationContainer">
+        <div class="education-entry">
+            <input type="text" class="education" name="education[]" required>
+            <input type="date" class="education-date" name="education-date[]">
+        </div>
+        <button type="button" onclick="addEducation()">Add Education</button>
+    </div>
+</div>
+<div class="achievements-section">
+    <label for="achievements">Achievements:</label>
+    <div id="achievementsContainer">
+        <div class="achievements-entry">
+            <input type="text" class="achievements" name="achievements[]" required>
+            <input type="date" class="achievements-date" name="achievements-date[]">
+        </div>
+        <button type="button" onclick="addAchievement()">Add Achievement</button>
+    </div>
+</div>
+<div class="certifications-section">
+    <label for="certifications">Certifications:</label>
+    <div id="certificationsContainer">
+        <div class="certifications-entry">
+            <input type="text" class="certifications" name="certifications[]" required>
+            <input type="date" class="certifications-date" name="certifications-date[]">
+        </div>
+        <button type="button" onclick="addCertification()">Add Certification</button>
+    </div>
+</div>
+            <button type="button" onclick="goToPreview()" class="submitBtn">Preview Resume</button>
+        </form>
+    </div>
+    <script src="html2pdf.bundle.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
+
