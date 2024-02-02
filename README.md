@@ -35,7 +35,7 @@ This is a web-based professional resume builder designed to help users create po
 
 ## Setup
 
-1. Clone the repository: `git clone https://github.com/your-username/resume-builder.git`
+1. Clone the repository: `git clone https://github.com/Dhakshayan/Online-Resume-Builder`
 
 2. Open `index.html` in a web browser to start using the resume builder.
 
@@ -47,4 +47,4 @@ This is a web-based professional resume builder designed to help users create po
 
 - Regularly check for updates in the `html2pdf.bundle.js` library for the latest features and improvements.
 
-Feel free to contribute to this project by submitting issues or pull requests. Happy resume building!
+Feel free to contribute to this project by submitting issues or pull requests.
