@@ -210,7 +210,7 @@ function downloadFromPreview() {
 }
 
 function cleanProfanity(text) {
-    const profanityList = ['nigga', 'profanity2', 'profanity3'];
+    const profanityList = ['stupid', 'idiot', 'donkey'];
     const regex = new RegExp(profanityList.join('|'), 'gi');
     return text.replace(regex, '');
 }
