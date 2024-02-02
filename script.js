@@ -68,7 +68,6 @@ function addCertification() {
     certificationsContainer.appendChild(certificationsEntry);
 }
 
-// Modify the goToPreview and generateResumeContent functions accordingly
 
 
 function goToPreview() {
@@ -98,30 +97,25 @@ function goToPreview() {
             </div>
             <script>
                 document.getElementById('convertButton').addEventListener('click', function() {
-                    // Hide the button before capturing the HTML content
                     document.getElementById('convertButton').style.display = 'none';
                   
-                    // Get the HTML content you want to convert (you can replace this with your HTML)
                     const htmlContent = document.documentElement.outerHTML;
                   
-                    // Use html2pdf library to convert HTML to PDF
                     html2pdf(htmlContent, {
                       margin: 10,
                       filename: 'converted_document.pdf',
                       image: { type: 'jpeg', quality: 0.98 },
                       html2canvas: { scale: 2 },
                       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                      pagebreak: { mode: 'avoid-all' } // Avoid cutting off content on page breaks
+                      pagebreak: { mode: 'avoid-all' } 
                     });
                   
-                    // Show the button after capturing the HTML content
                     document.getElementById('convertButton').style.display = 'block';
                   });
                   
                 </script>
               
                 <style>
-                  /* Define a CSS class to hide the button */
                   .hidden {
                     display: none;
                   }
@@ -216,9 +210,7 @@ function downloadFromPreview() {
 }
 
 function cleanProfanity(text) {
-    // Function to remove profanity from the "about" field
-    // Replace profanity with an empty string
-    const profanityList = ['nigga', 'profanity2', 'profanity3']; // Add your list of profanity words
+    const profanityList = ['nigga', 'profanity2', 'profanity3'];
     const regex = new RegExp(profanityList.join('|'), 'gi');
     return text.replace(regex, '');
 }
