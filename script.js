@@ -71,12 +71,28 @@ function addCertification() {
 
 
 function goToPreview() {
+    const loadingSpinner = document.createElement('div');
+    loadingSpinner.innerHTML = `
+        <div class="loadingspinner">
+            <div id="square1"></div>
+            <div id="square2"></div>
+            <div id="square3"></div>
+            <div id="square4"></div>
+            <div id="square5"></div>
+        </div>
+    `;
+    document.body.appendChild(loadingSpinner);
+
     const formData = new FormData(document.getElementById('resumeForm'));
     const cleanedAbout = cleanProfanity(formData.get('about'));
     formData.set('about', cleanedAbout);
+    setTimeout(() => {
 
-    const previewWindow = window.open('', '_blank');
-    previewWindow.document.write(`
+        document.body.removeChild(loadingSpinner);
+
+
+        const previewWindow = window.open('', '_blank');
+        previewWindow.document.write(`
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -101,13 +117,14 @@ function goToPreview() {
                   
                     const htmlContent = document.documentElement.outerHTML;
                   
+                    // Use html2pdf library to convert HTML to PDF
                     html2pdf(htmlContent, {
                       margin: 10,
                       filename: 'converted_document.pdf',
                       image: { type: 'jpeg', quality: 0.98 },
                       html2canvas: { scale: 2 },
                       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                      pagebreak: { mode: 'avoid-all' } 
+                      pagebreak: { mode: 'avoid-all' }
                     });
                   
                     document.getElementById('convertButton').style.display = 'block';
@@ -128,7 +145,10 @@ function goToPreview() {
         </body>
         </html>
     `);
+
+    }, 3000);
 }
+
 
 function generateResumeContent(formData) {
     const imageLink = formData.get('imageLink');
@@ -210,7 +230,7 @@ function downloadFromPreview() {
 }
 
 function cleanProfanity(text) {
-    const profanityList = ['stupid', 'idiot', 'donkey'];
+    const profanityList = ['nigga', 'profanity2', 'profanity3'];
     const regex = new RegExp(profanityList.join('|'), 'gi');
     return text.replace(regex, '');
 }
