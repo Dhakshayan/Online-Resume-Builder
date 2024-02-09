@@ -230,7 +230,7 @@ function downloadFromPreview() {
 }
 
 function cleanProfanity(text) {
-    const profanityList = ['nigga', 'profanity2', 'profanity3'];
+    const profanityList = ['profanity1', 'profanity2', 'profanity3'];
     const regex = new RegExp(profanityList.join('|'), 'gi');
     return text.replace(regex, '');
 }
